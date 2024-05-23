@@ -1,19 +1,20 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class TelcoAllowance implements UsagePromo {
-    private static Map<String, Double> priceMap;
 
-    static{
-        priceMap = Map.ofEntries(
-            priceMap.put("Smart", 15),
-            priceMap.put("Globe", 10),
-            priceMap.put("Ditto", 8),
-        )
-    }
+	private static Map<String, Integer> allowanceMap;
+
+	static {
+	    allowanceMap = Map.ofEntries(
+	        Map.entry("Smart", 15),
+	        Map.entry("Globe", 10),
+	        Map.entry("Ditto", 8)
+	    );
+	}
+
     @Override
     public String showAllowance(String telcoName, double money) {
-        int dataAllowance = priceMap.get(telcoName);
+        int dataAllowance = allowanceMap.get(telcoName);
         return "Offers a data allowance of " + dataAllowance + " GB for " + money + " pesos per month";
     }
 
@@ -21,9 +22,4 @@ public class TelcoAllowance implements UsagePromo {
         return this.showAllowance(telco.getTelcoName(), telco.getPromoPrice());
     }
 
-
-    @Override
-    public String showAllowance(String telcoName, Double money) {
-        return "ok";
-    }
 }

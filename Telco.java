@@ -2,14 +2,14 @@ public class Telco implements TelcoSubscription {
 
     private String telcoName;
     private double promoPrice;
-    private Integer dateAllowance;
+    private Integer dataAllowance;
     public boolean unliCallText ;
 
 
     public Telco(String telcoName, double promoPrice, Integer dateAllowance, boolean unliCallText){
         this.telcoName = telcoName;
         this.promoPrice = promoPrice;
-        this.dateAllowance = dateAllowance;
+        this.dataAllowance = dataAllowance;
         this.unliCallText = unliCallText;
     }
 
@@ -41,19 +41,20 @@ public class Telco implements TelcoSubscription {
         return promoPrice;
     }
 
-    public Integer getDateAllowance() {
-        return dateAllowance;
+    public Integer getDataAllowance() {
+        return dataAllowance;
     }
 
-    public void setDateAllowance(Integer dateAllowance) {
-        this.dateAllowance = dateAllowance;
+    public void setDateAllowance(Integer dataAllowance) {
+        this.dataAllowance = dataAllowance;
     }
 
     public boolean isUnliCallText() {
-        return UnliCallText;
+        return unliCallText;
     }
 
     public void setUnliCallText(boolean unliCallText) {
-        UnliCallText = unliCallText;
+        unliCallText = unliCallText;
     }
+
 }
